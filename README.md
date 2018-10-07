@@ -1,7 +1,7 @@
 # dotfiles
 This is the repository of my dotfiles fo far
 
-# directories
+## directories
 In this repo there are several *directories*, each for diffrent platform.
 The directories are:
 
@@ -9,13 +9,13 @@ The directories are:
 * **vim**
 * **zsh**
 
-# setup
+## setup
 To setup, simply run 
 ```bash
 source setup.sh
 ```
 
-## trobleshooting
+### trobleshooting
 if something went wrong, try to make setup.sh executeable
 ```bash
 chmod +x setup.sh
