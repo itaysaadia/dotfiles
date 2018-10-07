@@ -1,0 +1,3 @@
+ - add config for zsh and for oh-my-zsh
+ - install oh-my-zsh instead coping it
+ - change to symlinks instead of coping to keep on track of all the files under version control
