@@ -30,23 +30,23 @@ else
 fi
 
 # zsh
-if [ -d $HOME/.oh-my-zsh ]
-    echo "found oh-my-zsh!"
-    echo "moving the zshrc config"
-    cp zsh/zshrc $HOME/.zshrc
-    echo "zshrc moved. yay!"
+if ![ -d $HOME/.oh-my-zsh ]
+    echo "oops! looks like oh my zsh not installed!"
     # add oh-my-zsh
     echo "downloading oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    echo "oh my zsh is  now installed"
+fi
+echo "moving the zshrc config"
+cp zsh/zshrc $HOME/.zshrc
+echo "zshrc moved. yay!"
+if ![ -d $ZSH_CUSTOM/themes/spaceship-prompt]
     # add spaceship prompt
     echo "downloading spaceship-prompt for oh-my-zsh"
     git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+fi
+if ![ -d  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]
     # add zsh autosuggestions
     echo "adding zsh autosuggestions"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    # TODO lol add the rest of the things
-fi
-else
-    echo "oops! looks like oh my zsh not installed!"
-
 fi
